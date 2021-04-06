@@ -1,0 +1,33 @@
+.principal-header {
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  color: #030007;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 80%;
+  grid-template-rows: 10% 45% 45%;
+  grid-template-areas: "titulo"
+                      "serie1"
+                      "serie2";
+}
+
+.titulo {
+  grid-area: titulo;
+  background: #C0BA47;
+  width: 100%;
+}
+
+.breaking-bad {
+  grid-area: serie1;
+  background-color: #8a8976;
+  width: 100%;
+
+}
+
+.better-call-saul {
+  grid-area: serie2;
+  background-color: #57553f;
+}
