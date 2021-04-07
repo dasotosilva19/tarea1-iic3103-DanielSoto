@@ -4,6 +4,8 @@ import { BreakingBadSerie } from "./breakingBad.js"
 import { BetterCallSaul } from "./betterCallSaul.js"
 import {EpisodiosBB} from "./episodiosBB.js";
 import {EpisodiosBCS} from "./episodiosBCS.js";
+import { DescripcionCapituloBB } from './descripcionCapituloBB'; 
+import { DescripcionCapituloBCS } from './descripcionCapituloBCS'; 
 
 export function Home() {
   return (
@@ -27,6 +29,8 @@ export function Home() {
         <Route path="/bettercallsaul" exact component={BetterCallSaul} />
         <Route path="/breakingbad/:numTemp" exact component={EpisodiosBB} />
         <Route path="/bettercallsaul/:numTemp" exact component={EpisodiosBCS} />
+        <Route path="/breakingbad/capitulos/:numCap" exact component={DescripcionCapituloBB} />
+        <Route path="/bettercallsaul/capitulos/:numCap" exact component={DescripcionCapituloBCS} />
       </Switch>
     </Router>
   )

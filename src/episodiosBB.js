@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 export class EpisodiosBB extends React.Component {
   constructor(props) {
@@ -24,7 +25,9 @@ export class EpisodiosBB extends React.Component {
 
     console.log(capTemporada.length)
     const capTemporadaBB = capTemporada.map((cap, index) => (
-      <li>{index+1+"- "} {cap.title}</li>
+      <Link to={{pathname: "/breakingbad/capitulos/"+cap.episode_id}}>
+        <li>{index+1+"- "} {cap.title}</li>
+      </Link>
     ))
 
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 export class EpisodiosBCS extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ export class EpisodiosBCS extends React.Component {
         .then(capitulosJson => {this.setState(
             { capitulos: capitulosJson, loading: false, }, 
             () => console.log(this.state))});
-}
+  }
 
   render(){
 
@@ -24,7 +25,9 @@ export class EpisodiosBCS extends React.Component {
 
     console.log(capTemporada.length)
     const capTemporadaBCS = capTemporada.map((cap, index) => (
-      <li>{index+1+"- "} {cap.title}</li>
+      <Link to={{pathname: "/bettercallsaul/capitulos/"+cap.episode_id}}>
+        <li>{index+1+"- "} {cap.title}</li>
+      </Link>
     ))
 
 
