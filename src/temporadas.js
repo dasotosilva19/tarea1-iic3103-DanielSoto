@@ -6,6 +6,6 @@ export const Temporadas = () => (
             .then(temporadasBBJson => {this.setState(
                 { breakingBadTemporadas: temporadasBBJson, loading: false, }, 
                 () => console.log(this.state))})*/
-  <p>lol</p>
+  <p>holanda que talca</p>
   
 )
