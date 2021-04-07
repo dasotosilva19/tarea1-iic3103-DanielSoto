@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Series } from './principal'
+import { Home } from './home'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Series />
+    <Home />
   </React.StrictMode>,
   document.getElementById('root')
 );
