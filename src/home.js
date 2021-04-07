@@ -1,9 +1,9 @@
 import React from 'react';
-
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-
 import { BreakingBadSerie } from "./breakingBad.js"
 import { BetterCallSaul } from "./betterCallSaul.js"
+import {EpisodiosBB} from "./episodiosBB.js";
+import {EpisodiosBCS} from "./episodiosBCS.js";
 
 export function Home() {
   return (
@@ -25,6 +25,8 @@ export function Home() {
       <Switch>
         <Route path="/breakingbad" exact component={BreakingBadSerie} />
         <Route path="/bettercallsaul" exact component={BetterCallSaul} />
+        <Route path="/breakingbad/:numTemp" exact component={EpisodiosBB} />
+        <Route path="/bettercallsaul/:numTemp" exact component={EpisodiosBCS} />
       </Switch>
     </Router>
   )
