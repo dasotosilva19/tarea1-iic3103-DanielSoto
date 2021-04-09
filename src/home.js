@@ -5,7 +5,8 @@ import { BetterCallSaul } from "./betterCallSaul.js"
 import {EpisodiosBB} from "./episodiosBB.js";
 import {EpisodiosBCS} from "./episodiosBCS.js";
 import { DescripcionCapituloBB } from './descripcionCapituloBB'; 
-import { DescripcionCapituloBCS } from './descripcionCapituloBCS'; 
+import { DescripcionCapituloBCS } from './descripcionCapituloBCS';
+import { Personajes } from './personajes.js';
 
 export function Home() {
   return (
@@ -31,6 +32,7 @@ export function Home() {
         <Route path="/bettercallsaul/:numTemp" exact component={EpisodiosBCS} />
         <Route path="/breakingbad/capitulos/:numCap" exact component={DescripcionCapituloBB} />
         <Route path="/bettercallsaul/capitulos/:numCap" exact component={DescripcionCapituloBCS} />
+        <Route path="/personajes/:idPers" exact component={Personajes} />
       </Switch>
     </Router>
   )
