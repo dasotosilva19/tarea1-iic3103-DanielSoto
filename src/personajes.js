@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 export class Personajes extends React.Component{
   constructor(props) {
     super(props);
-    this.state = { personaje: [], loading: true, };
+    this.state = { personaje: [], comentarios: [], loading: true, };
   }
 
   componentDidMount() {
@@ -14,6 +14,12 @@ export class Personajes extends React.Component{
         .then(personajeJson => {this.setState(
             { personaje: personajeJson, loading: false, }, 
             () => console.log(this.state))});
+    
+    fetch('https://tarea-1-breaking-bad.herokuapp.com/api/quote?author='+this.props.match.params.idPers)
+        .then(response => response.json())
+        .then(comentariosJson => {this.setState(
+            { comentarios: comentariosJson, }, 
+            () => console.log(this.state))});        
   }
 
   render(){
@@ -35,6 +41,9 @@ export class Personajes extends React.Component{
         ))}</ul>
         <ul>Temporadas Better Call Saul: {pers.better_call_saul_appearance.map(app => (
           <Link to={{pathname: "/bettercallsaul/"+app}}>{app} </Link>
+        ))}</ul>
+        <ul>citas: {this.state.comentarios.map(com => (
+          <ul>-{com.quote}</ul>
         ))}</ul>
       </div>
     ))
