@@ -42,7 +42,8 @@ class Autocompletar extends React.Component {
     let suggestions = [];
     if (value.length > 0) {
       const regex = new RegExp(`^${value}`, 'i');
-      suggestions = this.items.sort().filter(v => regex.test(v));
+      //suggestions = this.items.sort().filter(v => regex.test(v));
+      suggestions = this.items.sort().filter(v => v.toLowerCase().includes(value))
     }
 
     this.setState(() => ({ suggestions, text: value }));

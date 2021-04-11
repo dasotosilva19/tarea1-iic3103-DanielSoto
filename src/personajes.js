@@ -23,6 +23,9 @@ export class Personajes extends React.Component{
   }
 
   render(){
+    if(this.state.personaje.length === 0 || this.state.personaje.length > 1) {
+      return <h1 style={{color: 'white'}} align="center">Lo sentimos, personaje no encontrado</h1>
+    }
 
     const character = this.state.personaje.map(pers => (
       <div style={{color: 'white'}} align='center'>
