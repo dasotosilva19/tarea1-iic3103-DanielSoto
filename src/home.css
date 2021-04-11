@@ -1,0 +1,21 @@
+.barra {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px 30px;
+  overflow: hidden;
+  background-color: #333;
+  border: 3px solid #555;
+  text-align: center;
+}
+
+body {
+  background-color: teal;
+}
+
+.bloques {
+  display: block;
+  background: green;
+  color: white;
+  padding: 10px 30px;
+  text-decoration: none;
+}

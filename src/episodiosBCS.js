@@ -25,14 +25,15 @@ export class EpisodiosBCS extends React.Component {
 
     console.log(capTemporada.length)
     const capTemporadaBCS = capTemporada.map((cap, index) => (
-      <Link to={{pathname: "/bettercallsaul/capitulos/"+cap.episode_id}}>
+      <Link style={{textDecoration: 'none', color: 'white'}}
+      to={{pathname: "/bettercallsaul/capitulos/"+cap.episode_id}}>
         <li>{index+1+"- "} {cap.title}</li>
       </Link>
     ))
 
 
     return (
-      <div>
+      <div align='center' style={{color: 'white'}}>
         <h1>Capitulos Better Call Saul temporada {this.props.match.params.numTemp}</h1>
         <p>{capTemporadaBCS}</p>
       </div>

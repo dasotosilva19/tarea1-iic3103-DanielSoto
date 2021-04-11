@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 export class BreakingBadSerie extends React.Component {
@@ -32,13 +32,14 @@ export class BreakingBadSerie extends React.Component {
       })
 
       const numTemporadasBB = temporadasBB2.map(cap => (
-          <li>
-            <Link to={{pathname: "/breakingbad/"+cap}}>Temporada {cap}</Link>
-          </li>
+        <li>
+            <Link style={{textDecoration: 'none', color: 'white'}}
+            to={{pathname: "/breakingbad/"+cap}}>Temporada {cap}</Link>
+        </li>
       ))
 
       return (
-          <div>
+          <div align="center">
               <div>
               <h1>Breaking Bad</h1>
               </div>

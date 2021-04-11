@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export class BetterCallSaul extends React.Component {
     constructor(props){
@@ -33,12 +33,13 @@ export class BetterCallSaul extends React.Component {
 
         const numTemporadasBCS = temporadasBCS2.map(cap => (
           <li>
-            <Link to={{pathname: "/bettercallsaul/"+cap}}>Temporada {cap}</Link>
+            <Link style={{textDecoration: 'none', color: 'white'}}
+            to={{pathname: "/bettercallsaul/"+cap}}>Temporada {cap}</Link>
           </li>
         ))
 
         return (
-            <div>
+            <div align='center'>
                 <div>
                 <h1>Better Call Saul</h1>
                 </div>

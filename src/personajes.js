@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export class Personajes extends React.Component{
   constructor(props) {
@@ -25,11 +25,12 @@ export class Personajes extends React.Component{
   render(){
 
     const character = this.state.personaje.map(pers => (
-      <div>
+      <div style={{color: 'white'}} align='center'>
+        <h1> Personajes </h1>
         <ul>
           <img src={pers.img} width ="150" hight="100" />
         </ul>
-        <ul>Nombre: {pers.name}</ul>
+        <ul><p>Nombre: {pers.name}</p></ul>
         <ul>Estado: {pers.status}</ul>
         <ul>Sobrenombre: {pers.nickname}</ul>
         <ul>Actor: {pers.portrayed}</ul>
@@ -37,10 +38,12 @@ export class Personajes extends React.Component{
           <ul>{ocup}</ul>
         ))}</ul>
         <ul>Temporadas Breaking Bad: {pers.appearance.map(app => (
-          <Link to={{pathname: "/breakingbad/"+app}}>{app} </Link>
+          <Link style={{textDecoration: 'none', color: 'gold'}}
+          to={{pathname: "/breakingbad/"+app}}>{app} </Link>
         ))}</ul>
         <ul>Temporadas Better Call Saul: {pers.better_call_saul_appearance.map(app => (
-          <Link to={{pathname: "/bettercallsaul/"+app}}>{app} </Link>
+          <Link style={{textDecoration: 'none', color: 'gold'}}
+          to={{pathname: "/bettercallsaul/"+app}}>{app} </Link>
         ))}</ul>
         <ul>citas: {this.state.comentarios.map(com => (
           <ul>-{com.quote}</ul>

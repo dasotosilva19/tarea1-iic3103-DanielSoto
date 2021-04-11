@@ -25,14 +25,15 @@ export class EpisodiosBB extends React.Component {
 
     console.log(capTemporada.length)
     const capTemporadaBB = capTemporada.map((cap, index) => (
-      <Link to={{pathname: "/breakingbad/capitulos/"+cap.episode_id}}>
+      <Link style={{textDecoration: 'none', color: 'white'}}
+      to={{pathname: "/breakingbad/capitulos/"+cap.episode_id}}>
         <li>{index+1+"- "} {cap.title}</li>
       </Link>
     ))
 
 
     return (
-      <div>
+      <div style={{color: 'white'}} align='center'>
         <h1>Capitulos Breaking Bad temporada {this.props.match.params.numTemp}</h1>
         <p>{capTemporadaBB}</p>
       </div>

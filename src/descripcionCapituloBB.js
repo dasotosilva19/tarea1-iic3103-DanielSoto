@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export class DescripcionCapituloBB extends React.Component {
   constructor(props) {
@@ -51,14 +51,15 @@ export class DescripcionCapituloBB extends React.Component {
         <ul>Fecha de emisión: {cap.air_date}</ul>
         <ul>Personajes: {cap.characters.map((pers, index) => (
           <ul>
-            <Link to={{pathname: "/personajes/"+listaPersonajes[index]}}>{pers}</Link>
+            <Link style={{textDecoration: 'none', color: 'gold'}}
+            to={{pathname: "/personajes/"+listaPersonajes[index]}}>{pers}</Link>
           </ul>
         ))}</ul>
       </div>
     ))
 
     return (
-      <div>
+      <div align='center' style={{color: 'white'}}>
         <h1>Breaking Bad</h1>
         {descripcionCapitulo}
       </div>
