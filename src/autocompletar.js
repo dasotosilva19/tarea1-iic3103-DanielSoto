@@ -31,6 +31,8 @@ class Autocompletar extends React.Component {
     
     const listaPers = []
 
+    console.log(this.state.personajes.length)
+
     this.state.personajes.map(pers => (
       listaPers.push(pers.name)
     ))
@@ -43,7 +45,7 @@ class Autocompletar extends React.Component {
     if (value.length > 0) {
       const regex = new RegExp(`^${value}`, 'i');
       //suggestions = this.items.sort().filter(v => regex.test(v));
-      suggestions = this.items.sort().filter(v => v.toLowerCase().includes(value))
+      suggestions = this.items.sort().filter(v => v.includes(value))
     }
 
     this.setState(() => ({ suggestions, text: value }));
